@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from chat_bot import send_message_and_get_response
+from pydantic import BaseModel
 
 app = FastAPI()
 
@@ -14,11 +15,15 @@ app.add_middleware(
 )
 
 
+class Item(BaseModel):
+    message: str
+
+
 @app.get("/api/test")
 async def test():
     return "Hello World!"
 
 
-@app.get("/api/chat")
-async def chat(message: str = ""):
-    return send_message_and_get_response(message)
+@app.post("/api/chat")
+async def chat(data: Item):
+    return send_message_and_get_response(data.message)
