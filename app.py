@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from chat_bot import send_message_and_get_response
 
 app = FastAPI()
 
@@ -16,3 +17,8 @@ app.add_middleware(
 @app.get("/api/test")
 async def test():
     return "Hello World!"
+
+
+@app.get("/api/chat")
+async def chat(message: str = ""):
+    return send_message_and_get_response(message)
