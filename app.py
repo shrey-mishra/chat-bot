@@ -21,7 +21,7 @@ class Item(BaseModel):
 
 @app.get("/api/test")
 async def test():
-    return "Hello World!"
+    return "main script"
 
 
 @app.post("/api/chat")
