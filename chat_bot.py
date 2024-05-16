@@ -59,7 +59,7 @@ def send_message_and_get_response(message):
     run = client.beta.threads.runs.create(
         thread_id=thread_id,
         assistant_id=assistant_id,
-        instructions="You are a Virtual Assistant of DBS Bank and you are helping a customer with their queries try to fetch this information",
+        instructions="Your desired prompt",
     )
 
     # Wait for the run to complete and retrieve the response
