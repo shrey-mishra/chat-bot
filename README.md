@@ -15,7 +15,7 @@ Prerequisites
 
 Installation
 1. Clone the repository:
-git clone https://github.com/yourusername/openai-chatbot.git
+git clone https://github.com/shrey-mishra/chat-bot.git
 cd openai-chatbot
 
 2.Install the required packages:
